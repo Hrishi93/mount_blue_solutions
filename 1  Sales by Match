@@ -1,0 +1,15 @@
+Map<Integer, Integer> colorCountMap = new HashMap<>();
+
+        // Count the occurrences of each color
+        for (int sock : ar) {
+            colorCountMap.put(sock, colorCountMap.getOrDefault(sock, 0) + 1);
+        }
+
+        int pairs = 0;
+
+        // Calculate the number of pairs for each color
+        for (int count : colorCountMap.values()) {
+            pairs += count / 2;
+        }
+
+        return pairs;
